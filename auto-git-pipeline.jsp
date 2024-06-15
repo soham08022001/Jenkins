@@ -17,7 +17,14 @@ pipeline {
                 sh '/opt/maven/bin/mvn sonar:sonar'
                 }
             }
-        } 
+        }
+        stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+            
                 stage('Deploy') {
             steps {
                 echo '"Deploy successfully"'
