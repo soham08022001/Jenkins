@@ -20,7 +20,7 @@ pipeline {
         }
     }
 }
-<!---->        stage('Deploy') {
+<!-->        stage('Deploy') {
 #            steps {
 #                deploy adapters: [tomcat8(credentialsId: 'Tomcat-creds', path: '', url: 'http://172.31.27.77:8080')], contextPath: '/', onFailure: false, war: '**/*.war'
 #        }
