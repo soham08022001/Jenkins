@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                
+                deploy adapters: [tomcat9(path: '', url: 'http://172.31.6.187:8080')], contextPath: '/', war: '**/*.war'
             }
         }
     }
